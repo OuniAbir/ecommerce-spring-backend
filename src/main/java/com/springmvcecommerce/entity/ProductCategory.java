@@ -2,6 +2,9 @@ package com.springmvcecommerce.entity;
 
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Set;
 
 @Entity
@@ -17,6 +20,7 @@ public class ProductCategory {
     private String categoryName ;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    @JsonIgnore
     private Set<Product> products ;
 
 	public ProductCategory() {

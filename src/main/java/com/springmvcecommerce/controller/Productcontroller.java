@@ -1,16 +1,36 @@
 package com.springmvcecommerce.controller;
 
- 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
- 
+import com.springmvcecommerce.dao.ProductDAO;
+import com.springmvcecommerce.entity.Product;
+
 @RestController
 public class Productcontroller {
 
-@GetMapping("/hello")
-public String getHello() {
-	return "hello ";
-}
+	@Autowired
+	private ProductDAO productDAO;
+
+	@GetMapping("/hello")
+	public String getHello() {
+		return "hello ";
+	}
+	@GetMapping("/products")
+	public List<Product> getProducts() { 
+		return productDAO.getProducts();
+	}
+	
+	@GetMapping("/products/{id}")
+	public Product getProductById(@PathVariable Long id) {
+		
+		return productDAO.getProductById(id);
+		
+	}
+
 	
 }
