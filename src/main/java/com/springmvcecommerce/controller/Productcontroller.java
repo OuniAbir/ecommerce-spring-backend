@@ -41,6 +41,13 @@ public class Productcontroller  {
 		return productDAO.findByCategoryid(Categoryid);
 		
 	}
+	
+	@GetMapping("/products/search/findByNameContaining")
+	@ResponseBody
+	public List<Product> findByNameContaining(@RequestParam(value = "name", required = true) String name){
+		return productDAO.findByNameContaining(name);
+		
+	}
 
 	
 }

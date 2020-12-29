@@ -46,15 +46,31 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Transactional
 	public List<Product> findByCategoryid(Long categoryid) {
-		
+
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 
-		// create query  
-		Query<Product> theQuery = currentSession.createQuery("from Product where  category.id=:categoryid", Product.class);
- 
+		// create query
+		Query<Product> theQuery = currentSession.createQuery("from Product where category.id=:categoryid",
+				Product.class);
+
 		theQuery.setParameter("categoryid", categoryid);
-		
+
+		// excute the query
+		List<Product> products = theQuery.getResultList();
+
+		// return results
+		return products;
+	}
+
+	@Transactional
+	public List<Product> findByNameContaining(String name) {
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		// create query
+		Query<Product> theQuery = currentSession.createQuery("from Product where lower(name) like :name", Product.class);
+ 		theQuery.setParameter("name" ,  "% " + name.toLowerCase() +  "%");
 		// excute the query
 		List<Product> products = theQuery.getResultList();
 
