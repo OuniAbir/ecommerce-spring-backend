@@ -44,4 +44,22 @@ public class ProductDAOImpl implements ProductDAO {
 		return product;
 	}
 
+	@Transactional
+	public List<Product> findByCategoryid(Long categoryid) {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+
+		// create query  
+		Query<Product> theQuery = currentSession.createQuery("from Product where  category.id=:categoryid", Product.class);
+ 
+		theQuery.setParameter("categoryid", categoryid);
+		
+		// excute the query
+		List<Product> products = theQuery.getResultList();
+
+		// return results
+		return products;
+	}
+
 }

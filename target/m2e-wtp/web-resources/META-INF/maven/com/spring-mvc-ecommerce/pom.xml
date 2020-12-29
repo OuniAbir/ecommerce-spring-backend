@@ -45,6 +45,7 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
+
 		<!-- Hibernate support -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -86,8 +87,8 @@
 	</dependencies>
 
 	<build>
-			<finalName>spring-mvc-ecommerce</finalName>
-			<pluginManagement>
+		<finalName>spring-mvc-ecommerce</finalName>
+		<pluginManagement>
 			<plugins>
 				<!-- build a web application archive (WAR) -->
 				<plugin>

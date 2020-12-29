@@ -3,6 +3,7 @@ package com.springmvcecommerce.entity;
 
 import javax.persistence.*;
 
+ 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Set;

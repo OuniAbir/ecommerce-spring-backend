@@ -8,5 +8,6 @@ public interface ProductDAO {
 
 	public List<Product> getProducts();
 	public Product getProductById(Long id);
+	public List<Product> findByCategoryid(Long categoryid);
 	
 }
