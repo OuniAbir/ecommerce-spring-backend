@@ -18,7 +18,7 @@ public class State {
 	@Column(name = "id")
 	private int id ;
 	
-	@Column(name = "namme")
+	@Column(name = "name")
 	private String name ;
 	
 	@ManyToOne
