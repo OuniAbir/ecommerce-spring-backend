@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "state")
 public class State {
@@ -23,6 +25,7 @@ public class State {
 	
 	@ManyToOne
 	@JoinColumn(name = "country_id" , nullable = false)
+	@JsonIgnore
 	private Country country ;
 	
 	
