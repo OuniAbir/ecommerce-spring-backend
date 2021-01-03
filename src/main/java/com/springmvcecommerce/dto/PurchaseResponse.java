@@ -11,5 +11,9 @@ public class PurchaseResponse {
 	public void setOrderTrackingNumber(String orderTrackingNumber) {
 		this.orderTrackingNumber = orderTrackingNumber;
 	}
+
+	public PurchaseResponse(String orderTrackingNumber) {
+  		this.orderTrackingNumber = orderTrackingNumber;
+	}
 	
 }
