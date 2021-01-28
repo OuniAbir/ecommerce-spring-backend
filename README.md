@@ -9,4 +9,4 @@ The frontend is built using Angular v11 - You can find the backend source code h
 
 ## DataBase Diagram
 
-![Db Diagram ](Db_Diagram.PNG)
+![Db Diagram](https://github.com/OuniAbir/ecommerce-spring-backend/blob/master/DB_Diagram.PNG)
